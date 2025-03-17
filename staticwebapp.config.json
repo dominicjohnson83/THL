@@ -1,12 +1,28 @@
 {
   "routes": [
     {
+      "route": "/_next/*",
+      "serve": "/_next/*",
+      "statusCode": 200
+    },
+    {
+      "route": "/static/*",
+      "serve": "/static/*",
+      "statusCode": 200
+    },
+    {
+      "route": "/images/*",
+      "serve": "/images/*",
+      "statusCode": 200
+    },
+    {
       "route": "/*",
       "serve": "/index.html",
       "statusCode": 200
     }
   ],
   "navigationFallback": {
-    "rewrite": "/index.html"
+    "rewrite": "/index.html",
+    "exclude": ["/images/*", "/static/*", "/_next/*", "/*.{css,scss,js,json,map}"]
   }
 } 
